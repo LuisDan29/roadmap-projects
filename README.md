@@ -7,8 +7,6 @@ Este repositório reúne projetos desenvolvidos com base nos desafios do **roadm
 - **Restricted Textarea**  
   🔗 https://roadmap.sh/projects/restricted-textarea
 
----
-
 ## Referências
 
 🔗 Site: https://roadmap.sh  
