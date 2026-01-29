@@ -1,6 +1,6 @@
 # Restricted Textarea
 
-Projeto simples baseado no desafio [Restricted Textarea](https://roadmap.sh/projects/restricted-textarea) do roadmap.sh.
+Projeto simples baseado no desafio **Restricted Textarea** do roadmap.sh.
 
 O projeto foi feito com um **textarea com limite de caracteres**, exibindo a **contagem em tempo real** e impedindo que o usuário digite além do máximo permitido.
 
@@ -15,4 +15,4 @@ O projeto foi feito com um **textarea com limite de caracteres**, exibindo a **c
 
 ---
 
-🔗 Link do Desafio: [https://roadmap.sh/projects/restricted-textarea](https://roadmap.sh/projects/restricted-textarea)
+🔗 Link do Desafio: https://roadmap.sh/projects/restricted-textarea
