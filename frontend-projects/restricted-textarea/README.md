@@ -15,4 +15,4 @@ O projeto foi feito com um **textarea com limite de caracteres**, exibindo a **c
 
 ---
 
-🔗 Link do Desafio: https://roadmap.sh/projects/restricted-textarea
+🔗 Link do Desafio: [https://roadmap.sh/projects/restricted-textarea](https://roadmap.sh/projects/restricted-textarea)
