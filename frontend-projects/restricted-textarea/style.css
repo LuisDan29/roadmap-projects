@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+#textarea {
+    background: white;
+    height: 30vh;
+    aspect-ratio: 16/10;
+    
+    padding: 21px;
+    border: solid 2px black;
+    border-radius: 21px;
+    outline: none;
+}
+
+#counter {
+    position: absolute;
+    padding: 5px 13px;
+}
+
+.jetbrains-mono-textarea, .jetbrains-mono-counter {
+    font-family: "JetBrains Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: large;
+}
