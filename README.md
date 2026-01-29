@@ -1,7 +1,16 @@
 # Roadmap Projects
 
-Este repositório contém projetos simples feitos com base no site **roadmap.sh**.
+Este repositório reúne projetos desenvolvidos com base nos desafios do **roadmap.sh**, com foco em aprendizado prático de frontend e backend.
 
-## Referência
+## Frontend Projects
 
-https://roadmap.sh
+- **Restricted Textarea**  
+  🔗 https://roadmap.sh/projects/restricted-textarea
+
+---
+
+## Referências
+
+🔗 Site: https://roadmap.sh  
+🔗 Projetos Frontend: https://roadmap.sh/frontend/projects  
+🔗 Projetos Backend: https://roadmap.sh/backend/projects
