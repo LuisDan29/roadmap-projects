@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+}
+
+#main {
+    height: 30vh;
+    aspect-ratio: 16/9;
+    
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+#tab-container {
+    display: flex;
+    gap: 21px;
+}
+
+.tab {
+    background: white;
+    color: gray;
+    padding: 5px 13px;
+    
+    font-family: Sans-Serif;
+    font-size: large;
+}
+
+.current {
+    border-bottom: solid 2px black;
+    color: black;
+}
+
+.tab-content {
+    flex-direction: column;
+    gap: 13px;
+    
+    padding: 21px 0px;
+    
+    font-family: Sans-Serif;
+    font-size: large;
+}

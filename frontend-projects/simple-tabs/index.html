@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="main">
+        <div id="tab-container">
+            <button id="tab-html" class="tab current" onclick="openTab('html')">HTML</button>
+            <button id="tab-css" class="tab" onclick="openTab('css')">CSS</button>
+            <button id="tab-javascript" class="tab" onclick="openTab('javascript')">JavaScript</button>
+        </div>
+        
+        <div id="html-content" class="tab-content" data-display="flex">
+            <p>HTML é a base de qualquer página web.<br>
+            Ele define a estrutura do conteúdo, como títulos, parágrafos, listas, imagens e links.<br>
+            Sem HTML, não existe página — apenas dados soltos.</p>
+            <p>HTML não se preocupa com cores ou animações.<br>
+            Seu foco é organizar e dar significado ao conteúdo exibido no navegador.</p>
+        </div>
+        
+        <div id="css-content" class="tab-content" data-display="none">
+            <p>CSS é responsável pela aparência da página.<br>
+            Com ele, é possível definir cores, fontes, espaçamentos, layouts e responsividade.</p>
+            <p>Enquanto o HTML cria a estrutura, o CSS deixa tudo visualmente agradável.<br>
+            Ele permite adaptar o site para diferentes tamanhos de tela e dispositivos.</p>
+        </div>
+        
+        <div id="javascript-content" class="tab-content" data-display="none">
+            <p>JavaScript adiciona comportamento à página.<br>
+            Ele reage às ações do usuário, como cliques, rolagem e preenchimento de formulários.</p>
+            <p>Com JavaScript, a página deixa de ser estática e passa a ser interativa.<br>
+            É usado para validações, animações, requisições a servidores e muito mais.</p>
+        </div>    
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
