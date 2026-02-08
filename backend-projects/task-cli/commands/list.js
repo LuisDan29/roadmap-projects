@@ -6,19 +6,24 @@ const COMMAND = {
 
     
 function listCommand(data, args) {
+    if (!data["tasks"].length) {
+        console.error("  Error: no task found.  ");
+        return false;
+    }
+    
     // Lista todas as tarefas
     if (!args.length) {
         listAll(data["tasks"]);
         return true;
     }
     
-    const statusOptions = ["todo", "in-progress", "done"];
-    
     // Erro por muitos argumentos
     if (args.length > 1) {
         console.error("  Error: too many arguments.  ");
         return false;
     }   
+    
+    const statusOptions = ["todo", "in-progress", "done"];
     
     // Erro por status invalido
     if (!statusOptions.includes(args[0])) {

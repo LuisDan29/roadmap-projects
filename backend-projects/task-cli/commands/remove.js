@@ -38,7 +38,7 @@ function removeById(data, id) {
         return false;
     }
 
-    data.tasks.splice(index, 1);
+    data["tasks"].splice(index, 1);
     console.log("  Task removed successfully.  ");
     return true;
 }
