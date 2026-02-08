@@ -10,6 +10,11 @@ Este repositório reúne projetos desenvolvidos com base nos desafios do **roadm
 - **Simple Tabs**  
   🔗 https://roadmap.sh/projects/simple-tabs
 
+## Backend Projects
+
+- **Task Tracker CLI**  
+  🔗 https://roadmap.sh/projects/task-tracker
+
 ## Referências
 
 🔗 Site: https://roadmap.sh  
