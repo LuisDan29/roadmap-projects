@@ -1,6 +1,6 @@
 const COMMAND = {
-    "description": "Removes a task",  
-    "usage": "remove <id> [--index]",
+    "description": "Remove a task from the list.",  
+    "usage": "remove <id>",
     "run": removeCommand
 }
 
@@ -15,56 +15,30 @@ function removeCommand(data, args) {
     const id = Number(args[0]); 
     
     // Erro por tipo errado
-    if (isNaN(id) || id <= 0) {
-        console.error("  Error: id must be positive number greater than zero.  ");
+    if (isNaN(id) || id < 0) {
+        console.error("  Error: id must be positive number.  ");
         return false;
     }
     
     // Erro por muitos argumentos
-    if (args.length > 2) {
+    if (args.length > 1) {
         console.error("  Error: too many arguments.  ");
         return false;
-    }
-    
-    // Se tiver flag
-    if (args[1]) {
-        // Erro por flag invalida
-        if (args[1] !== "--index") {
-            console.error("  Error: invalid flag.  ");
-            return false;    
-        }
-        
-        return removeByIndex(data, id);
     }
     
     return removeById(data, id);
 }
 
 
-function removeByIndex(data, index) {
-    data.splice(index - 1, 1);
-    console.log("  Task removed successfully.  ");
-    return true;
-}
-
-
 function removeById(data, id) {
-    let taskExists = false;
-    let taskObj;
-    
-    data.forEach(task => {
-        if (task["id"] === id) {
-            taskExists = true;
-            taskObj = task;
-        }
-    })
-    
-    if (!taskExists) {
+    const index = data["tasks"].findIndex(task => task.id === id);
+
+    if (index === -1) {
         console.error("  Error: task not found.  ");
         return false;
     }
-    
-    data.pop(taskObj);
+
+    data.tasks.splice(index, 1);
     console.log("  Task removed successfully.  ");
     return true;
 }

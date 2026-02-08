@@ -1,5 +1,5 @@
 const COMMAND = {
-    "description": "Add a new task.", 
+    "description": "Add a new task to the list.", 
     "usage": "add <description>",
     "run": addCommand
 }
@@ -16,9 +16,9 @@ function addCommand(data, args) {
         return false;
     }
     
-    // Cria ID da tarefa, 8 digitos
-    let id = Date.now().toString();
-    id = Number(id.slice(-8));
+    // Atribui id e avança a contagem
+    let id = data["nextId"]; 
+    data["nextId"]++;
     
     // Modelo do objeto tarefa
     const task = {
@@ -30,7 +30,7 @@ function addCommand(data, args) {
     }
     
     // Adiciona tarefa na lista
-    data.push(task);
+    data["tasks"].push(task);
     
     console.log("  Task added successfully.  ");
     return true;

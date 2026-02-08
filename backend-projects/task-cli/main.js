@@ -97,7 +97,10 @@ function helpCommand(command) {
 function loadData() {
     // Retorna lista vazia se não tiver arquivo.
     if (!fs.existsSync(DB_PATH)) {
-        return [];
+        return {
+            "nextId": 1,
+            "tasks": []
+        };
     }
     
     // Retorna conteúdo do arquivo JSON.
