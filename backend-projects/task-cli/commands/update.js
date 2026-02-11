@@ -20,12 +20,13 @@ function updateCommand(data, args) {
     
     const id = Number(args[0]); 
     
-    // Erro por tipo errado
+    // Erro se id não for um número válido
     if (isNaN(id) || id < 0) {
         console.error("  Error: id must be positive number.  ");
         return false;
     }
     
+    // Erro por falta de uma nova descrição pra tarefa
     if (!args[1]) {
         console.error("  Error: missing description argument.  ");
         return false;
@@ -33,6 +34,7 @@ function updateCommand(data, args) {
     
     const index = data["tasks"].findIndex(task => task.id === id);
     
+    // Erro se tarefa com tal id não existir
     if (index === -1) {
         console.error("  Error: task not found.  ");
         return false;
@@ -40,6 +42,7 @@ function updateCommand(data, args) {
     
     data["tasks"][index]["description"] = args[1];
     data["tasks"][index]["updatedAt"] = getToday();
+    
     console.log("  Task updated.  ");
     return true;
 }

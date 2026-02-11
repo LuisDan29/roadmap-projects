@@ -6,7 +6,7 @@ const COMMAND = {
 
 
 function markCommand(data, args) {
-    // Erro por falta de argumento
+    // Erro por falta de argumentos
     if (!args.length) {
         console.error("  Error: missing status and id argument.  ");
         return false;
@@ -20,13 +20,14 @@ function markCommand(data, args) {
     
     const statusOptions = ["todo", "in-progress", "done"];
     
-    // Erro por status invalido
+    // Erro se usuário digitar um status inválido
     if (!statusOptions.includes(args[0])) {
         console.error(`  Error: invalid status "${args[0]}".  `);
         console.error(`\x1b[90m  Statuses: todo | in-progress | done  \x1b[0m`);
         return false;
     }
     
+    // Erro se usuário não digitar um id
     if (!args[1]) {
         console.error("  Error: missing id argument.  ");
         return false;
@@ -34,7 +35,7 @@ function markCommand(data, args) {
     
     const id = Number(args[1]); 
     
-    // Erro por tipo errado
+    // Erro se id não for um número válido
     if (isNaN(id) || id < 0) {
         console.error("  Error: id must be positive number.  ");
         return false;
@@ -42,13 +43,15 @@ function markCommand(data, args) {
     
     const index = data["tasks"].findIndex(task => task.id === id);
     
+    // Erro se tarefa com tal id não existir
     if (index === -1) {
         console.error("  Error: task not found.  ");
         return false;
     }
-    
+
     data["tasks"][index]["status"] = args[0];
     data["tasks"][index]["updatedAt"] = getToday();
+    
     console.log("  Task status changed.  ");
     return true;
 }

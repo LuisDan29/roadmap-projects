@@ -6,12 +6,13 @@ const COMMAND = {
 
     
 function listCommand(data, args) {
+    // Erro se não tiver tarefa para listar
     if (!data["tasks"].length) {
         console.error("  Error: no task found.  ");
         return false;
     }
     
-    // Lista todas as tarefas
+    // Lista todas as tarefas se não tiver argumentos
     if (!args.length) {
         listAll(data["tasks"]);
         return true;
@@ -25,14 +26,14 @@ function listCommand(data, args) {
     
     const statusOptions = ["todo", "in-progress", "done"];
     
-    // Erro por status invalido
+    // Erro se usuário digitar um status inválido
     if (!statusOptions.includes(args[0])) {
         console.error(`  Error: invalid status "${args[0]}".  `);
         console.error(`\x1b[90m  Statuses: todo | in-progress | done  \x1b[0m`);
         return false;
     }
     
-    // Lista tarefas por status especifico
+    // Lista tarefas por status
     listByStatus(data["tasks"], args[0]);
     return true;
 }
@@ -41,8 +42,10 @@ function listCommand(data, args) {
 function listByStatus(tasks, status) {
     tasks.forEach(task => {
         if (task["status"] === status) {
+            
             console.log("");
             drawTask(task);
+            
         }
     })
     console.log("");
@@ -51,15 +54,16 @@ function listByStatus(tasks, status) {
 
 function listAll(tasks) {
     tasks.forEach(task => {
+        
         console.log("");
         drawTask(task);
+        
     })
     console.log("");
 }
 
 
 function drawTask(task) {
-    // Exibe os atributos e conteudos da tarefa
     drawAttributte(task, "id", "1;34");
     drawAttributte(task, "description", 37);
     drawAttributte(task, "status", 37);

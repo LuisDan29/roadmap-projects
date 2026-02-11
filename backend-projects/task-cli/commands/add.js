@@ -6,21 +6,21 @@ const COMMAND = {
 
     
 function addCommand(data, args) {
-    // Exibe Mensagens de Erro
+    // Erro por falta de descrição da tarefa
     if (args.length < 1) {
         console.error("  Error: missing task description.  ");
         return false;
     } 
+    // Erro por muitos argumentos
     if (args.length > 1) {
         console.error("  Error: too many arguments.  ");
         return false;
     }
-    
-    // Atribui id e avança a contagem
+
     let id = data["nextId"]; 
     data["nextId"]++;
     
-    // Modelo do objeto tarefa
+    // Cria objeto da tarefa
     const task = {
         "id": id,
         "description": args[0],
@@ -29,7 +29,7 @@ function addCommand(data, args) {
         "updatedAt": getToday()
     }
     
-    // Adiciona tarefa na lista
+    // Adiciona a tarefa aos dados
     data["tasks"].push(task);
     
     console.log("  Task added successfully.  ");

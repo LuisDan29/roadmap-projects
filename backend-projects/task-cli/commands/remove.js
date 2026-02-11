@@ -14,7 +14,7 @@ function removeCommand(data, args) {
     
     const id = Number(args[0]); 
     
-    // Erro por tipo errado
+    // Erro se id não for um número válido
     if (isNaN(id) || id < 0) {
         console.error("  Error: id must be positive number.  ");
         return false;
@@ -31,14 +31,18 @@ function removeCommand(data, args) {
 
 
 function removeById(data, id) {
+    // Procura por tarefa com o id digitado 
     const index = data["tasks"].findIndex(task => task.id === id);
 
+    // Erro se tarefa com tal id não existir
     if (index === -1) {
         console.error("  Error: task not found.  ");
         return false;
     }
 
+    // Remove tarefa dos dados
     data["tasks"].splice(index, 1);
+    
     console.log("  Task removed successfully.  ");
     return true;
 }

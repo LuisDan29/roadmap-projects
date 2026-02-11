@@ -5,6 +5,7 @@ const update = require("./update.js");
 const mark = require("./mark.js");
 
 
+// Objeto com todos os comandos disponíveis
 const COMMANDS = {
     add,
     remove,
